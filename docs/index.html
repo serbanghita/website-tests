@@ -1,4 +1,32 @@
+<body>
+
+</body>
+
 <script src="non-existent.js"></script>
 <script>
  nonExistentVar.someProperty;
+</script>
+
+<script>
+    document.registerElement('my-element', {
+        prototype: Object.create({
+            createdCallback: {
+                value: function() {
+                    console.log('custom element ready/upgraded');
+                }
+            },
+            attachedCallback: {
+                value: function() {
+                    console.log('custom element connected');
+                }
+            },
+        })
+    });
+    document.body.appendChild(document.createElement('my-element'));
+</script>
+
+<script>
+    setTimeout(() => {
+        console.log("Some message.");
+    }, 16);
 </script>
