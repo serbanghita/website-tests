@@ -30,3 +30,28 @@
         console.log("Some message.");
     }, 16);
 </script>
+
+<script>
+    (() => {
+        // Non-secure XHR request.
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", () => {
+            console.log("XHR on HTTP Worked!");
+        });
+        xhr.open("GET", "http://jsonplaceholder.typicode.com/todos/1");
+        xhr.send();
+    })();
+
+</script>
+
+<script>
+    (() => {
+        // Secure XHR request.
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", () => {
+            console.log("XHR on HTTPS Worked!");
+        });
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+        xhr.send();
+    })();
+</script>
