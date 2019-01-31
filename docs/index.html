@@ -64,3 +64,21 @@
         xhr.send();
     })();
 </script>
+
+<script>
+    (() => {
+        // Sync XHR request.
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", () => {
+            console.log("Forced Sync XHR on HTTPS Worked!");
+        });
+        xhr.open("GET", "results.json", false);
+        xhr.send();
+    })();
+</script>
+
+<script>
+    (() => {
+        let a = {,};
+    })();
+</script>
